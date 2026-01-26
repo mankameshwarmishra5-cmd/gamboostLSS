@@ -1,6 +1,22 @@
 \name{NEWS}
 \title{News for Package 'gamboostLSS'}
 
+\section{Changes in gamboostLSS version 2.2-0 (2026-01-26)}{
+  \subsection{User-visible changes}{
+    \itemize{
+      \item{ Made the package dependent on \pkg{gamlss.dist}.}
+    }
+  }
+  \subsection{Minor changes:}{
+    \itemize{
+      \item{Made sure that checks run without suggested packages.}
+      \item{Added vignette dependencies to vignette and removed 
+        hidden installation of package.}
+      \item {Updated URLs throughout the vignette.}
+    }
+  }
+}
+
 \section{Changes in gamboostLSS version 2.1-0 (2025-02-14)}{
   \subsection{User-visible changes}{
     \itemize{
@@ -270,7 +286,7 @@
        \item added a function to obtain cross-validation grids
        (\code{make_grid})
        \item added new function \code{as.families} to include
-       \pkg{gamlss} families in \pkg{gamboostLSS}
+       \pkg{gamlss} families (actually provided via \pkg{gamlss.dist}) in \pkg{gamboostLSS}
        \item added new families \code{BetaLSS} (implemented by Florian Wickler), 
        \code{GammaLSS}, \code{GaussianLSS}, \code{ZIPoLSS}, \code{ZINBLSS}
        \item \code{GaussianLSS} is now the default for \code{families}

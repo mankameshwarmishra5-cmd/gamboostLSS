@@ -37,6 +37,17 @@
     
     R CMD build --resave-data --compact-vignettes="gs+qpdf" gamboostLSS &&
         R CMD check --as-cran --run-dontrun --run-donttest gamboostLSS_XXX.tar.gz
+        
+    Additionally run check without suggested packages:    
+    _R_CHECK_DEPENDS_ONLY_=true _R_CHECK_FORCE_SUGGESTS_=FALSE R CMD check --as-cran --run-dontrun --run-donttest gamboostLSS_XXX.tar.gz  
+    
+    Alternatively try to do the following:
+    
+    1) Create file .Renviron in the package folder and add the following lines:
+        _R_CHECK_DEPENDS_ONLY_=true
+        _R_CHECK_FORCE_SUGGESTS_=FALSE
+    2) Run checks with RStudio or R CMD check as usual.
+    
 
     Run check with R-devel
        (see section "Checking the package with latest development version of R")

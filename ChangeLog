@@ -1,4 +1,39 @@
-commit 5251561e08f440ddf2609974152c958d7eb27682
+commit 8b676cbe44121a2259a48f3df0b38306d58fe812
+Author: Benjamin Hofner <benjamin.hofner@pei.de>
+
+    Release package 2.2-0
+
+commit 4f3432737de4eacfb74eefc3867c0d1b279cb706
+Author: Benjamin Hofner <benjamin.hofner@pei.de>
+
+    make package dependent on gamlss.dist
+
+commit 0657da97ae716e6e44fd7c6b9e2a69bd739982ed
+Author: Benjamin Hofner <benjamin.hofner@pei.de>
+
+    fixed URLs as required by CRAN check
+
+commit 2aadbd454411e24706bb2fbeb7333d51a03aaf0f
+Author: Benjamin Hofner <benjamin.hofner@pei.de>
+
+    Added \VignetteDepends to the vignette and removed hidden installation of packages
+
+commit 1c450707753f6a09c468ebc8b6daa50c90abcc06
+Author: Benjamin Hofner <benjamin.hofner@pei.de>
+
+    Updated tests by making code conditional on availability of suggested packages
+
+commit 2486fe82ceb3b02156bc5ff7c395f3347c6f20d4
+Author: Benjamin Hofner <benjamin.hofner@pei.de>
+
+    Cleaned manuals
+
+commit d9bf4db94bf45778b251d2571b23ae7eaef48e34
+Author: Benjamin Hofner <benjamin.hofner@pei.de>
+
+    clean code file by removing unecessary lines
+
+commit 9021dc385431bf1d32a3119ebe513bac7501ad10
 Author: Benjamin Hofner <benjamin.hofner@pei.de>
 
     Release version 2.1-0
