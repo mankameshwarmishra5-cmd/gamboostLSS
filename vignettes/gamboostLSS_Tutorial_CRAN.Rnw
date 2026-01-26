@@ -1,6 +1,8 @@
 \documentclass[shortnames,nojss]{jss} % onecolumn
 
 % \VignetteIndexEntry{gamboostLSS Tutorial}
+% \VignetteDepends{gamboostLSS, R2BayesX, BayesX, survival}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Setup LaTeX
@@ -46,22 +48,24 @@
 
 <<init, echo = FALSE, results = hide>>=
 options(prompt = "R> ", continue = "+  ", width = 76, useFancyQuotes = FALSE)
-repos <- "http://cran.at.r-project.org"
+
 ## check if a current version of gamboostLSS is installed
 suppressWarnings(pd <- packageDescription("gamboostLSS"))
 if (all(is.na(pd))){
-    install.packages("gamboostLSS", repos = repos)
-    pd <- packageDescription("gamboostLSS")
+    stop(sQuote("gamboostLSS"), "not properly installed.")
 } else {
     if (compareVersion(pd$Version, "1.2-0") < 0){
-        warning(sQuote("gamboostLSS"), " (1.2-0 or newer) is being installed!")
-        install.packages("gamboostLSS", repos = repos)
+        stop(sQuote("gamboostLSS"), " (1.2-0 or newer) needs to be installed!")
     }
 }
 
 ## for the exact reproduction of the plots R2BayesX >= 0.3.2 is needed
-suppressWarnings(if (!require("R2BayesX"))
-                     install.packages("R2BayesX", repos = repos))
+if (!require("R2BayesX"))
+  stop("cannot attach package ", sQuote("R2BayesX"))
+
+if (!require("BayesX"))
+  stop("cannot attach package ", sQuote("BayesX"))
+
 
 ## remove (possibly) altered versions of "india" from working environment
 suppressWarnings(rm("india"))
@@ -488,30 +492,33 @@ in the data set as even the 75\% quantile of the stunting score is below zero.
 \begin{figure}[ht!]
   \centering
 <<india_stunting1, echo = FALSE,  fig = TRUE, width = 5, height = 4.5>>=
-library("R2BayesX")
-## plot mean
-FUN <- mean
-india_agg <- data.frame(mcdist = names(tapply(india$stunting, india$mcdist, FUN,
-                                              na.rm = TRUE)),
-                        stunting = tapply(india$stunting, india$mcdist, FUN,
-                                          na.rm = TRUE))
-par(mar = c(1, 0, 2, 0))
-plotmap(india.bnd, india_agg, pos = "bottomright",
-        range = c(-5.1, 1.50), main = "Mean", mar.min = NULL)
+if (require("R2BayesX")) {
+  ## plot mean
+  FUN <- mean
+  india_agg <- data.frame(mcdist = names(tapply(india$stunting, india$mcdist, FUN,
+                                                na.rm = TRUE)),
+                          stunting = tapply(india$stunting, india$mcdist, FUN,
+                                            na.rm = TRUE))
+  par(mar = c(1, 0, 2, 0))
+  plotmap(india.bnd, india_agg, pos = "bottomright",
+          range = c(-5.1, 1.50), main = "Mean", mar.min = NULL)
+}
 @
 \hfill
 <<india_stunting2, echo = FALSE,  fig = TRUE, width = 5, height = 4.5>>=
-## plot sd
-FUN <- sd
-india_agg <- data.frame(mcdist = names(tapply(india$stunting, india$mcdist, FUN,
-                                              na.rm = TRUE)),
-                        stunting = tapply(india$stunting, india$mcdist, FUN,
-                                          na.rm = TRUE))
-## remove missing values (= no variation)
-india_agg <- india_agg[complete.cases(india_agg),]
-par(mar = c(1, 0, 2, 0))
-plotmap(india.bnd, india_agg, pos = "bottomright",
-        range = c(0, 4.00), main = "Standard deviation")
+if (require("R2BayesX")) {
+  ## plot sd
+  FUN <- sd
+  india_agg <- data.frame(mcdist = names(tapply(india$stunting, india$mcdist, FUN,
+                                                na.rm = TRUE)),
+                          stunting = tapply(india$stunting, india$mcdist, FUN,
+                                            na.rm = TRUE))
+  ## remove missing values (= no variation)
+  india_agg <- india_agg[complete.cases(india_agg),]
+  par(mar = c(1, 0, 2, 0))
+  plotmap(india.bnd, india_agg, pos = "bottomright",
+          range = c(0, 4.00), main = "Standard deviation")
+}
 @
 \caption{Spatial structure of stunting in India. The raw mean per district is
   given in the left figure, ranging from dark blue (low stunting score), to dark
