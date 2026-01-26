@@ -23,7 +23,7 @@
 
   The fitting methods \code{\link{glmboostLSS}} and
   \code{\link{gamboostLSS}}, are alternatives for the algorithms
-  provided with \code{\link[gamlss]{gamlss}} in the \code{gamlss}
+  provided with \code{\link[gamlss]{gamlss}} in the \pkg{gamlss}
   package. They offer shrinkage of effect estimates, intrinsic variable
   selecion and model choice for potentially high-dimensional data
   settings.
@@ -36,7 +36,9 @@
   2015) and are similar in their usage.
 
   The package includes some pre-defined GAMLSS distributions, but the
-  user can also specify new distributions with \code{\link{Families}}.
+  user can also specify new distributions with \code{\link{Families}} 
+  or use the families implemented in the \pkg{gamlss} framework in the
+  dedicated package \pkg{gamlss.dist} using the constructor \code{\link{as.families}}.
 
   A wide range of different base-learners is available for covariate
   effects (see \code{\link[mboost]{baselearners}}) including linear

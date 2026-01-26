@@ -239,7 +239,7 @@ Families(..., qfun = NULL, name = NULL)
 
 \seealso{
   \code{\link{as.families}} for applying GAMLSS distributions provided
-  in the framework of the \code{gamlss} package.
+  in the framework of the \pkg{gamlss} package (via \pkg{gamlss.dist}).
 
   The functions \code{\link{gamboostLSS}} and \code{\link{glmboostLSS}}
   can be used for model fitting.
@@ -311,7 +311,6 @@ newStudentT <- Families(mu= newStudentTMu(mu=mu, df=df),
 
 \donttest{### Do not test the following code per default on CRAN as it takes some time to run:
 ### usage of the new Student's t distribution:
-library(gamlss)   ## required for rTF
 set.seed(1907)
 n <- 5000
 x1  <- runif(n)

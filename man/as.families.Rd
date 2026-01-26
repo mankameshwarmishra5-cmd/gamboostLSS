@@ -17,7 +17,7 @@
 \alias{gamlss4parTau}
 
 \title{
-  Include \code{gamlss} families in the boosting framework of \code{gamboostLSS}
+  Include \pkg{gamlss.dist} families in the boosting framework of \code{gamboostLSS}
 }
 
 \description{
@@ -159,12 +159,12 @@ if (require("gamlss.dist")) {
 
 coef(glmss, off2int = TRUE)
 
-## compare to gamlss
-library(gamlss)
-glmss2 <- gamlss(y ~ x, sigma.formula = ~x, family = "NO")
-coef(glmss2)
-glmss2$sigma.coef
-
+## compare to gamlss if available
+if (require(gamlss)) {
+    glmss2 <- gamlss(y ~ x, sigma.formula = ~x, family = "NO")
+    coef(glmss2)
+    glmss2$sigma.coef
+}
 }
 
 \keyword{models}
