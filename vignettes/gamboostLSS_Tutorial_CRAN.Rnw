@@ -108,7 +108,7 @@ if (!file.exists("cvrisk"))
   the specification and application of the model itself, we present a variety of
   convenience functions, including methods for tuning parameter selection,
   prediction and visualization of results. The package \pkg{gamboostLSS} is
-  available from CRAN (\url{http://cran.r-project.org/package=gamboostLSS}).}
+  available from CRAN (\url{https://CRAN.R-project.org/package=gamboostLSS}).}
 
 \Keywords{additive models, prediction intervals, high-dimensional data}
 
@@ -120,16 +120,13 @@ if (!file.exists("cvrisk"))
   91054 Erlangen, Germany\\
   E-mail: \email{benjamin.hofner@fau.de},\\
   \hphantom{E-mail: }\email{andreas.mayr@fau.de}\\
-  URL: \url{http://www.imbe.med.uni-erlangen.de/cms/benjamin_hofner.html},\\
-  \hphantom{URL: }\url{http://www.imbe.med.uni-erlangen.de/ma/A.Mayr/}\\
 
   Matthias Schmid\\
   Department of Medical Biometry, Informatics and Epidemiology\\
   University of Bonn\\
   Sigmund-Freud-Stra{\ss}e 25\\
   53105 Bonn\\
-  E-mail: \email{matthias.schmid@imbie.uni-bonn.de}\\
-  URL: \url{http://www.imbie.uni-bonn.de}
+  E-mail: \email{matthias.schmid@imbie.uni-bonn.de}
 }
 
 
@@ -232,8 +229,8 @@ methods become unfeasible.
 The \pkg{gamboostLSS} package is a comprehensive implementation of the most
 important issues and aspects related to the use of the \emph{gamboostLSS}
 algorithm. The package is available on CRAN
-(\url{http://cran.r-project.org/package=gamboostLSS}). Current development
-versions are hosted on GitHub (\url{https://github.com/hofnerb/gamboostLSS}). As
+(\url{https://cran.r-project.org/package=gamboostLSS}). Current development
+versions are hosted on GitHub (\url{https://github.com/boost-R/gamboostLSS}). As
 will be demonstrated in this paper, the package provides a large number of
 response distributions \citep[e.g., distributions for continuous data, count
 data and survival data, including \textit{all} distributions currently available
@@ -462,7 +459,7 @@ India, based on boosted quantile regression, see \citet{Fenske:2011:JASA}, and
 
 The data set that we use in this analysis is based on the Standard Demographic
 and Health Survey, 1998-99, on malnutrition of children in India, which can be
-downloaded after registration from \url{http://www.measuredhs.com}. For
+downloaded after registration from \url{https://www.measuredhs.com}. For
 illustrative purposes, we use a random subset of \Sexpr{nrow(india)}
 observations from the original data (approximately 12\%) and only a (very small)
 subset of variables. For details on the data set and the data source see the
@@ -1573,7 +1570,7 @@ Sections~\ref{sec:model_complexity} and~\ref{sec:model_tuning}).
 Table~\ref{tab:gamlss_families} gives an overview of common, additional GAMLSS
 distributions and GAMLSS distributions with a different parametrization than in
 \pkg{gamboostLSS}. For a comprehensive overview see the distribution tables
-available at \url{www.gamlss.org} and the documentation of the
+available at \url{https://www.gamlss.com} and the documentation of the
 \pkg{gamlss.dist} package \citep{pkg:gamlss.dist:4.3-0}. Note that
 \pkg{gamboostLSS} works only for more-parametric distributions, while in
 \pkg{gamlss.dist} also a few one-parametric distributions are implemented. In
